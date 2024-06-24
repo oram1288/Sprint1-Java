@@ -35,7 +35,7 @@ public class LibraryMenu {
                 case 2:
                     System.out.println("Editing an existing library item...");
                     System.out.println();
-                    Patron patron = new Patron("John","sdfsd",);
+                    Patron patron = new Patron("John","sdfsd");
                     System.out.println(patron);
                     break;
                 case 3:
