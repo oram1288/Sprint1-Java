@@ -1,13 +1,11 @@
-package Sprint1_Java;
 
 import java.util.Scanner;
-
-import Week7.Cat;
 
 public class LibraryMenu {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int choice;
+        
 
         do {
             System.out.println();
@@ -29,14 +27,16 @@ public class LibraryMenu {
                 case 1:
                     System.out.println("Adding a new library item...");
                     System.out.println();
-                    Cat cat = new Cat("Spots");
-                    System.out.println(cat);
+                    System.out.println("Enter the new Item's name");
+                    String name = scanner.nextLine();
+                    System.out.println("Enter the number of copies");
+                    int copies = scanner.nextInt();
+                    LibraryItem LibItem = new LibraryItem(name, copies);
+                    System.out.println(LibItem);
                     break;
                 case 2:
                     System.out.println("Editing an existing library item...");
                     System.out.println();
-                    Patron patron = new Patron("John","sdfsd");
-                    System.out.println(patron);
                     break;
                 case 3:
                     System.out.println("Deleting a library item...");
@@ -45,10 +45,17 @@ public class LibraryMenu {
                 case 4:
                     System.out.println("Borrowing a library item...");
                     // Add logic to borrow a library item
+                    System.out.println("Enter the name of the Item being borrowed");
+                    String itemName = scanner.nextLine();
+                    System.out.println("Enter the name of the Patron");
+                    String patronName = scanner.nextLine();
+                    System.out.println("Enter number of copies being borrowed");
+                    int copiesNum = scanner.nextInt();
+
                     break;
                 case 5:
                 System.out.println("Returning a library item...");
-                // Add logic to return a library item
+                // Add logic to return a library
                     break;
                 case 6:
                     System.out.println("Exiting the system. Goodbye!");

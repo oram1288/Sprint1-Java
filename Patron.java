@@ -1,9 +1,9 @@
-package Sprint1_Java;
+
 
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Patron {
+public class Patron {
     private String name;
     private String address;
     private String phoneNumber;
@@ -17,7 +17,7 @@ public abstract class Patron {
     }
 
     public void borrowItem(LibraryItem item, int copies) {
-        if (item.getNumberOfCopies() >= copies) {
+        if (item.getNumOfCopies() >= copies) {
             item.borrowItem(copies);
             borrowedItems.add(item);
             System.out.println("Item borrowed successfully!");
@@ -49,7 +49,7 @@ public abstract class Patron {
         return phoneNumber;
     }
 
-    public List getBorrowedItems() {
+    public List<LibraryItem> getBorrowedItems() {
         return borrowedItems;
     }
 
@@ -66,7 +66,7 @@ public abstract class Patron {
         this.phoneNumber = phoneNumber;
     }
 
-    public List setBorrowedItems(LibraryItem borrowedItems) {
+    public void setBorrowedItems(List<LibraryItem> borrowedItems) {
         this.borrowedItems = borrowedItems;
     }
 
