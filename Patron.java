@@ -66,7 +66,7 @@ public abstract class Patron {
         this.phoneNumber = phoneNumber;
     }
 
-    public void setBorrowedItems(LibraryItem borrowedItems) {
+    public List setBorrowedItems(LibraryItem borrowedItems) {
         this.borrowedItems = borrowedItems;
     }
 
