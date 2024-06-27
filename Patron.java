@@ -20,6 +20,7 @@ public class Patron {
         if (item.getNumOfCopies() >= copies) {
             item.borrowItem(copies);
             borrowedItems.add(item);
+            item.setNumOfCopies(item.getNumOfCopies() - copies);
             System.out.println("Item borrowed successfully!");
         } else {
             System.out.println("Not enough copies available");
@@ -30,6 +31,7 @@ public class Patron {
         if (borrowedItems.contains(item)) {
             item.returnItem(copies);
             borrowedItems.remove(item);
+            item.setNumOfCopies(item.getNumOfCopies() + copies);
             System.out.println("Item returned successfully!");
         } else {
             System.out.println("Item not found in borrowed items");

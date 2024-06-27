@@ -236,16 +236,16 @@ public class LibraryMenu {
                         library.searchPatronByName(patronName3).setPhoneNumber(newPatronNum);
                         System.out.println("Patron Phone Number updated");
                     }else if(choice3 == 4){
-                        System.out.println("Enter the Book name to be added");
+                        System.out.println("Enter the Book name to be borrowed");
                         String bookToAdd = scanner.nextLine();
-                        System.out.println("Enter the num of Copies of the Book to be added");
+                        System.out.println("Enter the num of Copies of the Book to be borrowed");
                         int bookCopies = scanner.nextInt();
                         library.searchPatronByName(patronName3).borrowItem(library.searchLibraryItemByTitle(bookToAdd), bookCopies);
                         System.out.println("Book(s) borrowed");
                     }else if(choice3 == 5){
-                        System.out.println("Enter the name of the book to be removed");
+                        System.out.println("Enter the name of the book to be returned");
                         String remBook1 = scanner.nextLine();
-                        System.out.println("Enter the number of copies of the book to be removed");
+                        System.out.println("Enter the number of copies of the book to be returned");
                         int bookCopies1 = scanner.nextInt();
                         library.searchPatronByName(patronName3).returnItem(library.searchLibraryItemByTitle(remBook1), bookCopies1);
                         System.out.println("Book(s) returned");
