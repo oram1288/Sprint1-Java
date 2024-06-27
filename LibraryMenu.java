@@ -27,7 +27,7 @@ public class LibraryMenu {
             System.out.println("11. Delete Patron");
             System.out.println("12. Exit");
             System.out.println();
-            System.out.print("Enter your choice (1-6): ");
+            System.out.print("Enter your choice (1-12): ");
             System.out.println();
             choice = scanner.nextInt();
             System.out.println();
