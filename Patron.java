@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Patron {
-    private String name;
-    private String address;
-    private String phoneNumber;
-    private List<LibraryItem> borrowedItems;
+    private String name = " ";
+    private String address = " ";
+    private String phoneNumber  = " ";
+    private ArrayList<LibraryItem> borrowedItems;
 
     public Patron(String name, String address, String phoneNumber) {
         this.name = name;
@@ -35,6 +35,7 @@ public class Patron {
             System.out.println("Item not found in borrowed items");
         }
     }
+    
 
     // Getters
     public String getName() {
@@ -66,7 +67,7 @@ public class Patron {
         this.phoneNumber = phoneNumber;
     }
 
-    public void setBorrowedItems(List<LibraryItem> borrowedItems) {
+    public void setBorrowedItems(ArrayList<LibraryItem> borrowedItems) {
         this.borrowedItems = borrowedItems;
     }
 

@@ -6,7 +6,7 @@ import java.util.List;
 public class Author {
     private String name;
     private String birthday;
-    private List<LibraryItem> books = new ArrayList<>();
+    private ArrayList<LibraryItem> books = new ArrayList<>();
 
     public Author(String name, String birthday){
         this.name = name;
@@ -30,7 +30,7 @@ public class Author {
     public void setBirthday(String birthday){
         this.birthday = birthday;
     }
-    public void setBooks(List<LibraryItem> book){
+    public void setBooks(ArrayList<LibraryItem> book){
         this.books = book;
     }
     public String getName(){
@@ -45,6 +45,7 @@ public class Author {
     public String toString(){
         return "Author( Name: " + name + " Date of Birth: " + birthday + " Books:" + books + ")";
     }
+ 
 
     
 }

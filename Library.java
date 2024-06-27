@@ -1,12 +1,10 @@
-package Sprint1_Java;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class Library {
-    private List<LibraryItem> libraryItems;
-    private List<Author> authors;
-    private List<Patron> patrons;
+    private ArrayList<LibraryItem> libraryItems;
+    private ArrayList<Author> authors;
+    private ArrayList<Patron> patrons;
 
     
     public Library() {
@@ -20,20 +18,39 @@ public class Library {
         libraryItems.add(item);
     }
 
+    public void removeLibraryItem(LibraryItem item){
+        libraryItems.remove(item);
+    }
+
     // Add a new author
     public void addAuthor(Author author) {
         authors.add(author);
+    }
+    public void removeAuthor(Author item){
+        authors.remove(item);
     }
 
     // Add a new patron 
     public void addPatron(Patron patron) {
         patrons.add(patron);
     }
+    public void removePatron(Patron item){
+        patrons.remove(item);
+    }
 
     // Search for a library item by its title
     public LibraryItem searchLibraryItemByTitle(String title) {
         for (LibraryItem item : libraryItems) {
-            if (item.getTitle().equalsIgnoreCase(title)) {
+            if (item.getName().equalsIgnoreCase(title)) {
+                return item;
+            }
+
+        }
+        return null;
+    }
+    public Author searchAuthorByName(String name){
+        for (Author item : authors){
+            if(item.getName().equalsIgnoreCase(name)){
                 return item;
             }
         }
@@ -43,7 +60,7 @@ public class Library {
     // Search for a library item by the author's name
     public LibraryItem searchLibraryItemByAuthor(String authorName) {
         for (LibraryItem item : libraryItems) {
-            if (item.getAuthor().equalsIgnoreCase(authorName)) {
+            if (item.getAuthor().getName().equalsIgnoreCase(authorName)) {
                 return item;
             }
         }
@@ -53,7 +70,7 @@ public class Library {
     // Search for a library item by its ISBN
     public LibraryItem searchLibraryItemByISBN(String ISBN) {
         for (LibraryItem item : libraryItems) {
-            if (item.getISBN().equals(ISBN)) {
+            if (item.getIsbn().equals(ISBN)) {
                 return item;
             }
         }
@@ -64,7 +81,7 @@ public class Library {
     public boolean borrowLibraryItem(String ISBN) {
         LibraryItem item = searchLibraryItemByISBN(ISBN);
         if (item != null && !item.isBorrowed()) {
-            item.borrowItem();
+            item.borrowItem(1);
             return true;
         }
         return false;
@@ -74,7 +91,7 @@ public class Library {
     public boolean returnLibraryItem(String ISBN) {
         LibraryItem item = searchLibraryItemByISBN(ISBN);
         if (item != null && item.isBorrowed()) {
-            item.returnItem();
+            item.returnItem(1);
             return true;
         }
         return false;
@@ -85,5 +102,24 @@ public class Library {
         for (LibraryItem item : libraryItems) {
             System.out.println(item);
         }
+    }
+    public void displayAuthors() {
+        for (Author item : authors) {
+            System.out.println(item);
+        }
+    }
+    public void displayPatrons() {
+        for (Patron item : patrons) {
+            System.out.println(item);
+        }
+    }
+    public Patron searchPatronByName(String name) {
+        for (Patron patron : patrons) {
+            if (patron.getName().equalsIgnoreCase(name)) {
+                return patron;
+            }
+            
+        }
+        return null;
     }
 }
